@@ -46,19 +46,19 @@ class _PollCreationScreenState extends State<PollCreationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Moderators Poll'),
+        title: const Text('Moderators Poll'),
         backgroundColor: Colors.orange,
       ),
       body: Container(
         color: Colors.black, // Set background color to black
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
                 child: Container(
-                  child: Text(
+                  child: const Text(
                     'Create Poll',
                     style: TextStyle(
                       color: Colors.white,
@@ -67,9 +67,9 @@ class _PollCreationScreenState extends State<PollCreationScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               // Topic text field
-              Text(
+              const Text(
                 'Topic',
                 style: TextStyle(
                   color: Colors.white,
@@ -87,10 +87,10 @@ class _PollCreationScreenState extends State<PollCreationScreen> {
                   hintMaxLines: 5,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16.0,
               ),
-              Text(
+              const Text(
                 'Statement',
                 style: TextStyle(
                   color: Colors.white,
@@ -108,7 +108,7 @@ class _PollCreationScreenState extends State<PollCreationScreen> {
                   hintMaxLines: 5,
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Row(
                 // Radio buttons in one line
                 children: [
@@ -156,7 +156,7 @@ class _PollCreationScreenState extends State<PollCreationScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               // Option text fields
               for (int i = 0; i < 4; i++)
                 TextFormField(
@@ -186,7 +186,7 @@ class _PollCreationScreenState extends State<PollCreationScreen> {
                     ),
                   ),
                 ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               // Submit button
               ElevatedButton(
                 onPressed: _createPoll,

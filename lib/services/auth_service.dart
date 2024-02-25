@@ -16,14 +16,21 @@ class AuthService {
           'username': phoneNumber,
           'password': otp
         }), // Updated to use phoneNumber and otp
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Token 430772ad06439c4e010d80f5b714dfe2630b7216',
+        },
       );
 
       if (response.statusCode == 200) {
+        int statusCode = response.statusCode;
+        print('Status code: $statusCode');
         // Authentication successful, parse and return access token
         final Map<String, dynamic> responseData = jsonDecode(response.body);
         return responseData[_tokenName];
       } else {
+        int statusCode = response.statusCode;
+        print('Status code: $statusCode');
         // Authentication failed, return null
         return null;
       }
@@ -41,8 +48,13 @@ class AuthService {
           'otp': otp,
           'phone_number': phoneNumber
         }), // Use phoneNumber instead of _username
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Token 430772ad06439c4e010d80f5b714dfe2630b7216',
+        },
       );
+      int statusCode = response.statusCode;
+      print('Status code: $statusCode');
 
       return response.statusCode == 200;
     } catch (e) {

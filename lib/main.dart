@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      initialRoute: '/create_poll', // Set the initial route to the login screen
+      initialRoute: '/', // Set the initial route to the login screen
       routes: {
         '/': (context) => LoginScreen(), // Change to LoginScreen
         '/create_poll': (context) => PollCreationScreen(),

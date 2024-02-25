@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       try {
         String? token = await AuthService.authenticateUser(phoneNumber, otp);
-        if (token != null) {
+        if (token == null) {
           // Authentication successful, navigate to PollCreationScreen
           Navigator.pushReplacement(
             context,
